@@ -361,6 +361,11 @@
   grid-template-columns: 1fr;
   grid-gap: 1.5rem;
 }
+@media screen and (max-width: 500px) {
+  .back-video{
+    transform: translate(-50%, 0%) !important;
+  }
+}
 
 @media screen and (min-width: 768px) {
   .menu-btn {
