@@ -1,0 +1,21 @@
+.contact{
+    height: 100%;
+    padding-top: 40vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include lg-img;
+
+    h2{
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        border-bottom: 2px solid $secondary-color;
+    }
+
+    &-list{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1.5rem;
+    }
+}

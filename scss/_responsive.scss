@@ -1,0 +1,106 @@
+@include media-md {
+    .menu-btn {
+        visibility: hidden;
+    }
+
+    .nav {
+        visibility: visible;
+
+        &-list {
+            display: block;
+            transform: translateY(0);
+            height: 100%;
+            background: transparent;
+            text-align: right;
+
+            &_item {
+                display: inline;
+                padding-right: 1rem;
+            }
+        }
+
+        &-link {
+            font-size: 1.5rem;
+        }
+    }
+    .back-video{
+        transform: translate(-30%, 0%) !important;
+    }
+
+    .about {
+        &-bio {
+            font-size: 1.5rem;
+        }
+
+        &-bio_image {
+            height: 70vh;
+        }
+    }
+
+    .projects {
+        &-bio_image {
+            height: 70vh;
+        }
+
+        &-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .contact {
+        padding-top: 50vh;
+
+        &-list{
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+    }
+    .social-icons{
+        font-size: x-large;
+    }
+    footer{
+        font-size: x-large;
+    }
+}
+// for large screen sizes
+@include media-lg{
+    .nav-link{
+        font-size: 2rem;
+    }
+    .home{
+        padding-top: 50vh;
+    }
+    .social-icons{
+        font-size: xx-large;
+    }
+    footer{
+        font-size: x-large;
+    }
+    .back-video{
+        transform: translate(-10%, 0%) !important;
+    }
+
+    .projects{
+        &-bio_image {
+            height: 65vh;
+        }
+        &-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    .contact {
+        padding-top: 60vh;
+
+        &-list{
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+    }
+}
+@media (max-aspect-ratio: 16/9){
+    .back-video{
+        transform: translate(-40%, 0%);
+    }
+}

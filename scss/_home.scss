@@ -1,0 +1,72 @@
+.home {
+    min-height: 100vh;
+    padding-top: 40vh;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    position: relative;
+
+    // @include lg-img;
+    .back-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0.5;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    h2{
+        margin-bottom: 1rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    &-name {
+        font-size: 3rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        font-family: 'Rubik Moonrocks', cursive;
+
+        &_last {
+            position: relative;
+            color: transparent;
+            font-weight: 500;
+            -webkit-text-stroke: 0.1vw $secondary-color;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.2rem;
+
+            &::before {
+                content: attr(data-text);
+                position: absolute;
+                top: 1;
+                left: 0;
+                width: 0;
+                height: 100%;
+                color: $secondary-color;
+                -webkit-text-stroke: 0vw #000;
+                border-right: 5px solid $secondary-color;
+                overflow: hidden;
+                animation: animate 10s  infinite;
+                
+            }
+            
+        }
+    }
+}
+.work{
+        border-top: 2px solid set-text-color($primary-color);
+        padding-top: 1rem;
+
+}
+@keyframes animate{
+    0%,10%,100%
+    {
+        width: 0;
+    }
+
+    70%,90%
+    {
+        width: 100%;
+    }
+    
+}

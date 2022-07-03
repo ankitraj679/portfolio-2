@@ -1,0 +1,516 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.home {
+  min-height: 100vh;
+  padding-top: 40vh;
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+.home .back-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.5;
+  min-width: 100%;
+  min-height: 100%;
+}
+.home h2 {
+  margin-bottom: 1rem;
+  font-family: "Montserrat", sans-serif;
+}
+.home-name {
+  font-size: 3rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Rubik Moonrocks", cursive;
+}
+.home-name_last {
+  position: relative;
+  color: transparent;
+  font-weight: 500;
+  -webkit-text-stroke: 0.1vw #ff652f;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.2rem;
+}
+.home-name_last::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 1;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: #ff652f;
+  -webkit-text-stroke: 0vw #000;
+  border-right: 5px solid #ff652f;
+  overflow: hidden;
+  -webkit-animation: animate 10s infinite;
+          animation: animate 10s infinite;
+}
+
+.work {
+  border-top: 2px solid #fff;
+  padding-top: 1rem;
+}
+
+@-webkit-keyframes animate {
+  0%, 10%, 100% {
+    width: 0;
+  }
+  70%, 90% {
+    width: 100%;
+  }
+}
+
+@keyframes animate {
+  0%, 10%, 100% {
+    width: 0;
+  }
+  70%, 90% {
+    width: 100%;
+  }
+}
+.menu-btn {
+  position: absolute;
+  z-index: 1;
+  top: 1rem;
+  right: 1rem;
+  height: 20px;
+  width: 28px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn_burger {
+  position: absolute;
+  top: 0.5rem;
+  right: 0;
+  width: 28px;
+  height: 3px;
+  transition: all 0.5s ease-in-out;
+  background: #fff;
+}
+.menu-btn_burger::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  width: 28px;
+  height: 3px;
+  transition: all 0.5s ease-in-out;
+  background: #fff;
+}
+.menu-btn_burger::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 20px;
+  height: 3px;
+  transition: all 0.5s ease-in-out;
+  background: #fff;
+}
+.menu-btn_burger.open {
+  transform: rotate(720deg);
+  background: transparent;
+}
+.menu-btn_burger.open::before {
+  transform: rotate(45deg) translate(5px, 8px);
+}
+.menu-btn_burger.open::after {
+  transform: rotate(-45deg) translate(3px, -7px);
+  width: 28px;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  opacity: 0.98;
+  visibility: hidden;
+}
+.nav.open {
+  visibility: visible;
+}
+.nav-list {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #272727;
+  list-style: none;
+  padding-right: 1rem;
+  transform: translateY(-100%);
+  transition: all 0.5s ease-in-out;
+}
+.nav-list.open {
+  transform: translateY(0);
+}
+.nav-list_item {
+  transform: translateX(100vw);
+  transition: all 0.5s ease-in-out;
+  padding: 1rem;
+}
+.nav-list_item.open {
+  transform: translateX(0);
+}
+.nav-list_item.active > a {
+  color: #ff652f;
+}
+.nav-link {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  padding: 1rem 0;
+  display: inline-block;
+  font-family: "Gulzar", serif;
+}
+.nav-link:hover {
+  color: #ff652f;
+}
+
+.nav-list_item:nth-child(1) {
+  transition-delay: 0.25s;
+}
+
+.nav-list_item:nth-child(2) {
+  transition-delay: 0.35s;
+}
+
+.nav-list_item:nth-child(3) {
+  transition-delay: 0.45s;
+}
+
+.nav-list_item:nth-child(4) {
+  transition-delay: 0.55s;
+}
+
+.about {
+  padding-bottom: 2rem;
+  position: relative;
+}
+.about-bio_image {
+  height: 50vh;
+  width: 100%;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url(../image/chris3.jpg) center top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.about-bio_image p {
+  margin-bottom: 1rem;
+}
+.about-bio {
+  width: 80%;
+  text-align: center;
+}
+.about-bio .text-secondary {
+  padding-bottom: 1rem;
+}
+.about .waves {
+  position: relative;
+  width: 100%;
+  height: 30px;
+}
+.about .waves .wave {
+  position: absolute;
+  z-index: -1;
+}
+.about .jobs {
+  width: 60vw;
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+.about .jobs-job {
+  background: #414141;
+  border-bottom: 5px solid #ff652f;
+  padding: 0.5rem;
+}
+.about .jobs-job h2,
+.about .jobs-job h3 {
+  margin: 0.5rem 0;
+}
+.about .jobs-job h6 {
+  margin: 0.3rem 0;
+}
+.about .social-icons {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+}
+.about footer {
+  transform: rotate(90deg) translate(-3rem, -5rem);
+}
+
+.projects {
+  padding-bottom: 2rem;
+}
+.projects-bio_image {
+  height: 40vh;
+  width: 100%;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url(../image/chris3.jpg) center top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.projects-bio_image .text-secondary {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.projects .waves {
+  position: relative;
+  width: 100%;
+  height: 0;
+}
+.projects .waves .wave {
+  position: absolute;
+  z-index: -1;
+}
+.projects-items {
+  width: 60vw;
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+.projects-items .projects-item {
+  position: relative;
+  background: #414141;
+  border-bottom: 5px solid #ff652f;
+  overflow: hidden;
+  cursor: pointer;
+}
+.projects-items .projects-item img {
+  width: 100%;
+}
+.projects-items .projects-item::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: #ff652f;
+  transition: all 0.5s ease-in-out;
+}
+.projects-items .projects-item:hover::after {
+  top: 0;
+  opacity: 0.9;
+}
+.projects-items .projects-item:hover .projects-btn {
+  opacity: 1;
+}
+.projects-btns {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  text-align: center;
+}
+.projects-btn {
+  opacity: 0;
+  color: #000;
+  transition: all 0.5s ease-in-out;
+}
+.projects-btn:hover {
+  color: #fff;
+}
+.projects .social-icons {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+}
+.projects footer {
+  transform: rotate(90deg) translate(-3rem, -5rem);
+}
+
+.contact {
+  height: 100%;
+  padding-top: 40vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url(../image/chris3.jpg) center top;
+  background-size: cover;
+}
+.contact h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #ff652f;
+}
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-btn {
+    visibility: hidden;
+  }
+
+  .nav {
+    visibility: visible;
+  }
+  .nav-list {
+    display: block;
+    transform: translateY(0);
+    height: 100%;
+    background: transparent;
+    text-align: right;
+  }
+  .nav-list_item {
+    display: inline;
+    padding-right: 1rem;
+  }
+  .nav-link {
+    font-size: 1.5rem;
+  }
+
+  .back-video {
+    transform: translate(-30%, 0%) !important;
+  }
+
+  .about-bio {
+    font-size: 1.5rem;
+  }
+  .about-bio_image {
+    height: 70vh;
+  }
+
+  .projects-bio_image {
+    height: 70vh;
+  }
+  .projects-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact {
+    padding-top: 50vh;
+  }
+  .contact-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .social-icons {
+    font-size: x-large;
+  }
+
+  footer {
+    font-size: x-large;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .nav-link {
+    font-size: 2rem;
+  }
+
+  .home {
+    padding-top: 50vh;
+  }
+
+  .social-icons {
+    font-size: xx-large;
+  }
+
+  footer {
+    font-size: x-large;
+  }
+
+  .back-video {
+    transform: translate(-10%, 0%) !important;
+  }
+
+  .projects-bio_image {
+    height: 65vh;
+  }
+  .projects-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact {
+    padding-top: 60vh;
+  }
+  .contact-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .back-video {
+    transform: translate(-40%, 0%);
+  }
+}
+body {
+  background: #272727;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  line-height: 1;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.text-secondary {
+  color: #ff652f;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  padding: 1rem;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+main .social-icons {
+  position: fixed;
+  bottom: 2rem;
+  left: 1rem;
+}
+main .social-icons a {
+  padding: 0.4rem;
+  transition: all 0.5s ease-in-out;
+}
+main .social-icons a:hover {
+  color: #ff652f;
+}
+
+footer {
+  position: fixed;
+  bottom: 0.4rem;
+  right: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: right;
+  color: #fff;
+}/*# sourceMappingURL=styles.css.map */

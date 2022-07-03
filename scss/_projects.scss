@@ -1,0 +1,106 @@
+.projects {
+    padding-bottom: 2rem;
+
+    &-bio_image {
+        height: 40vh;
+        width: 100%;
+        @include lg-img;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+
+        .text-secondary{
+
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+    }
+    .waves{
+        position: relative;
+        width: 100%;
+        height: 0;
+        .wave{
+            position: absolute;
+            // opacity: 0.85;
+            z-index: -1;
+        }
+    }
+
+    &-items {
+        width: 60vw;
+        margin: 2rem auto 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+
+        .projects-item {
+            position: relative;
+            background: lighten($primary-color, 10%);
+            border-bottom: 5px solid $secondary-color;
+            overflow: hidden;
+            cursor: pointer;
+
+            img{
+                width: 100%;
+            }
+
+            &::after{
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                background: $secondary-color;
+                @include transition-ease;
+            }
+
+            &:hover{
+                &::after{
+                    top: 0;
+                    opacity: 0.9;
+                }
+                .projects-btn{
+                    opacity: 1;
+                }
+            }
+           
+        }
+    }
+
+    &-btns{
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        text-align: center;
+
+    }
+
+    &-btn{
+        opacity: 0;
+        color: set-text-color($secondary-color);
+        @include transition-ease;
+
+        &:hover{
+            color: set-text-color($primary-color);
+        }
+    }
+
+    .social-icons{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+    }
+
+    footer{
+        transform: rotate(90deg) translate(-3rem, -5rem);
+    }
+}
